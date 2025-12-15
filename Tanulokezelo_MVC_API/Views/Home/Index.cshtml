@@ -1,0 +1,31 @@
+﻿@model List<Tanulokezelo_MVC_API.Models.StudentDTO>
+
+<h2>Tanulók</h2>
+
+<table class="table-striped mt-3 table">
+    <thead>
+        <tr>
+            <th>OM azonosító</th>
+            <th>Név</th>
+            <th>Kor</th>
+            <th>Átlag</th>
+            <th>Műveletek</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tanulo in Model)
+        {
+            <tr>
+                <td>@tanulo.OMazonosito</td>
+                <td>@tanulo.Nev</td>
+                <td>@tanulo.EletKor</td>
+                <td>@tanulo.Atlag</td>
+                <td><a href="/Home/Details?om=@tanulo.OMazonosito">Reszletek</a>  <a href="/Home/Update?om=@tanulo.OMazonosito"> Módosítás</a><a href="/Home/Delete?om=@tanulo.OMazonosito"> Torles</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br/>
+<a asp-action="Create" class="btn btn-primary mt-3">Új tanuló felvétele</a>
+

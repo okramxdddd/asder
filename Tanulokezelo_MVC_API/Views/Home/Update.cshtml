@@ -1,0 +1,25 @@
+﻿@model StudentDTO;
+
+<h2>@Model.Nev tanulo modositasa</h2>
+
+<form method="post">
+    <div>
+        <label>OM azonosító: </label>
+        <input asp-for="OMazonosito" type="number"
+               class="form-control" value="@Model.OMazonosito"/>
+    </div>
+    <div>
+        <label>Név: </label>
+        <input asp-for="Nev" class="form-control" value="@Model.Nev" />
+    </div>
+    <div>
+        <label>Életkor: </label>
+        <input asp-for="EletKor" type="number" class="form-control" value="@Model.EletKor" />
+    </div>
+    <div>
+        <label>Átlag: </label>
+        <input asp-for="Atlag" type="number" step="0.01"
+               class="form-control" value="@Model.Atlag" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Modosit</button>
+</form>
